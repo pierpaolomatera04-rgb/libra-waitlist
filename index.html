@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libra — I libri tornano a essere un appuntamento</title>
+  <meta name="description" content="Libra è la prima piattaforma italiana per leggere libri serializzati. Storie a blocchi, autori italiani, il primo capitolo sempre gratis. Apertura: giugno 2026.">
+  <meta name="theme-color" content="#2D3E1F">
+
+  <meta property="og:title" content="Libra — I libri tornano a essere un appuntamento">
+  <meta property="og:description" content="La prima piattaforma italiana per leggere libri serializzati. Iscriviti alla waitlist, i primi 100 sono Founding Reader.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-cream: #F4EDDF;
+      --bg-dark: #2D3E1F;
+      --bg-dark-soft: #3A4E2A;
+      --ink: #1F2814;
+      --ink-soft: #4A5C3A;
+      --gold: #C8A656;
+      --gold-soft: #D4B26B;
+      --sage: #8FA67A;
+      --sage-soft: #A8BE94;
+      --cream-deep: #ECE3CC;
+      --white: #FFFFFF;
+      --logo-brown: #3D3520;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+    nav {
+      padding: 22px 0;
+      background: var(--bg-cream);
+      border-bottom: 1px solid rgba(31, 40, 20, 0.08);
+    }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      font-size: 42px;
+      color: var(--logo-brown);
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+    .nav-cta { display: flex; gap: 16px; align-items: center; }
+    .btn-pill {
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-sage { background: var(--sage); color: var(--bg-cream); }
+    .btn-sage:hover { background: var(--sage-soft); transform: translateY(-1px); }
+
+    .hero {
+      background: var(--bg-dark);
+      color: var(--bg-cream);
+      padding: 90px 0 100px;
+      text-align: center;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: rgba(244, 237, 223, 0.1);
+      border: 1px solid rgba(244, 237, 223, 0.2);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--bg-cream);
+      margin-bottom: 40px;
+      animation: fadeUp 0.7s ease-out;
+    }
+    .pill .dot {
+      width: 8px; height: 8px;
+      background: var(--sage);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(44px, 6.5vw, 88px);
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      color: var(--bg-cream);
+      margin-bottom: 28px;
+      max-width: 950px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeUp 0.8s ease-out 0.1s both;
+    }
+    h1 .gold { color: var(--gold); }
+    .hero-lead {
+      font-size: 20px;
+      line-height: 1.5;
+      max-width: 680px;
+      margin: 0 auto 56px;
+      color: rgba(244, 237, 223, 0.9);
+      animation: fadeUp 0.9s ease-out 0.2s both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .signup-card {
+      background: var(--bg-cream);
+      color: var(--ink);
+      padding: 36px;
+      border-radius: 24px;
+      max-width: 520px;
+      margin: 0 auto;
+      box-shadow: 0 30px 80px rgba(31, 40, 20, 0.3);
+      text-align: left;
+      animation: fadeUp 1s ease-out 0.3s both;
+    }
+    .signup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 28px;
+    }
+    .signup-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .signup-counter {
+      font-size: 13px;
+      color: var(--ink-soft);
+      text-align: right;
+      line-height: 1.3;
+    }
+    .signup-counter strong {
+      color: var(--bg-dark);
+      font-weight: 700;
+      font-size: 16px;
+      font-variant-numeric: tabular-nums;
+    }
+    .form-row { margin-bottom: 14px; }
+    .form-input {
+      width: 100%;
+      padding: 16px 18px;
+      border: 1.5px solid rgba(31, 40, 20, 0.15);
+      border-radius: 12px;
+      background: var(--white);
+      font-family: inherit;
+      font-size: 16px;
+      color: var(--ink);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--sage);
+      box-shadow: 0 0 0 4px rgba(143, 166, 122, 0.15);
+    }
+    .form-input::placeholder { color: rgba(31, 40, 20, 0.35); }
+    .btn-primary {
+      width: 100%;
+      padding: 17px 24px;
+      background: var(--bg-dark);
+      color: var(--bg-cream);
+      border: none;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .btn-primary:hover {
+      background: var(--bg-dark-soft);
+      transform: translateY(-1px);
+    }
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .btn-primary svg { transition: transform 0.2s; }
+    .btn-primary:hover svg { transform: translateX(4px); }
+    .form-note {
+      margin-top: 18px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      text-align: center;
+    }
+    .form-note strong { color: var(--bg-dark); font-weight: 700; }
+    .form-error {
+      margin-top: 14px;
+      font-size: 14px;
+      color: #B3261E;
+      text-align: center;
+      display: none;
+    }
+    .form-error.active { display: block; }
+
+    .section { padding: 110px 0; }
+    .section-label {
+      display: block;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 24px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: clamp(36px, 4.8vw, 56px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--bg-dark);
+      max-width: 800px;
+      margin: 0 auto 80px;
+    }
+    .section-title .gold { color: var(--gold); }
+
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .step {
+      background: var(--white);
+      padding: 40px 32px;
+      border-radius: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid rgba(31, 40, 20, 0.06);
+    }
+    .step:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(31, 40, 20, 0.08);
+    }
+    .step-icon {
+      width: 56px; height: 56px;
+      border-radius: 16px;
+      background: var(--bg-dark);
+      color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
+    .step h3 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin-bottom: 14px;
+      color: var(--bg-dark);
+    }
+    .step p { color: var(--ink-soft); font-size: 16px; line-height: 1.6; }
+
+    .founding { background: var(--bg-dark); color: var(--bg-cream); padding: 110px 0; }
+    .founding .section-label { color: var(--gold); }
+    .founding .section-title { color: var(--bg-cream); }
+    .tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .tier {
+      background: var(--bg-dark-soft);
+      border: 1px solid rgba(244, 237, 223, 0.12);
+      padding: 30px 24px;
+      border-radius: 20px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .tier:hover {
+      transform: translateY(-4px);
+      border-color: rgba(244, 237, 223, 0.25);
+    }
+    .tier-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(244, 237, 223, 0.15);
+    }
+    .tier-lotto {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(244, 237, 223, 0.6);
+    }
+    .tier-position {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      font-variant-numeric: tabular-nums;
+    }
+    .tier-name {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.015em;
+      line-height: 1.15;
+    }
+    .tier ul { list-style: none; }
+    .tier li {
+      padding: 12px 0;
+      padding-left: 30px;
+      position: relative;
+      font-size: 15px;
+      line-height: 1.5;
+      color: rgba(244, 237, 223, 0.9);
+    }
+    .tier li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      color: var(--gold);
+      font-size: 14px;
+    }
+    .tier.featured {
+      background: var(--bg-cream);
+      color: var(--ink);
+      border-color: var(--gold);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    }
+    .tier.featured .tier-lotto { color: var(--ink-soft); }
+    .tier.featured .tier-position { color: var(--bg-dark); }
+    .tier.featured .tier-header { border-bottom-color: rgba(31, 40, 20, 0.15); }
+    .tier.featured li { color: var(--ink); }
+    .tier.featured li::before { color: var(--bg-dark); }
+    .tier-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      background: var(--gold);
+      color: var(--bg-dark);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .founding-note {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 16px;
+      color: rgba(244, 237, 223, 0.7);
+    }
+
+    .success-card { display: none; }
+    .success-card.active { display: block; animation: fadeUp 0.5s ease-out; }
+    .signup-card.success-mode .signup-form { display: none; }
+    .success-badge-pill {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--gold);
+      color: var(--bg-dark);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .success-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.015em;
+      color: var(--bg-dark);
+    }
+    .success-msg {
+      font-size: 15px;
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .position-display {
+      background: var(--bg-dark);
+      color: var(--bg-cream);
+      padding: 24px;
+      border-radius: 16px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .position-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(244, 237, 223, 0.6);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .position-number {
+      font-size: 52px;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+    .position-tier {
+      font-size: 14px;
+      color: rgba(244, 237, 223, 0.8);
+      margin-top: 10px;
+      font-weight: 500;
+    }
+    .referral-section {
+      border-top: 1px solid rgba(31, 40, 20, 0.1);
+      padding-top: 22px;
+    }
+    .referral-label {
+      font-size: 15px;
+      margin-bottom: 14px;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+    .referral-label strong { color: var(--bg-dark); }
+    .referral-link {
+      display: flex;
+      align-items: center;
+      background: var(--cream-deep);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      overflow: hidden;
+    }
+    .referral-link code {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--bg-dark);
+      font-family: ui-monospace, monospace;
+      font-weight: 600;
+    }
+    .copy-btn {
+      padding: 7px 14px;
+      background: var(--bg-dark);
+      color: var(--bg-cream);
+      border: none;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-family: inherit;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover { background: var(--bg-dark-soft); }
+    .copy-btn.copied { background: var(--sage); }
+    .share-buttons { display: flex; gap: 8px; }
+    .share-btn {
+      flex: 1;
+      padding: 12px;
+      border: 1.5px solid rgba(31, 40, 20, 0.15);
+      background: transparent;
+      color: var(--bg-dark);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .share-btn:hover {
+      background: var(--bg-dark);
+      color: var(--bg-cream);
+      border-color: var(--bg-dark);
+    }
+
+    .final-cta { padding: 120px 0; text-align: center; background: var(--bg-cream); }
+    .final-cta h2 {
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      max-width: 800px;
+      margin: 0 auto 28px;
+      color: var(--bg-dark);
+    }
+    .final-cta h2 .gold { color: var(--gold); }
+    .final-cta p {
+      font-size: 19px;
+      color: var(--ink-soft);
+      max-width: 540px;
+      margin: 0 auto 44px;
+    }
+    .scroll-up {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 17px 36px;
+      background: var(--bg-dark);
+      color: var(--bg-cream);
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .scroll-up:hover {
+      background: var(--bg-dark-soft);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 40px 0;
+      background: var(--bg-dark);
+      color: rgba(244, 237, 223, 0.6);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+    .footer-inner .logo { color: var(--bg-cream); }
+
+    @media (max-width: 1100px) {
+      .tiers { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    }
+    @media (max-width: 900px) {
+      .container { padding: 0 20px; }
+      .hero { padding: 60px 0 80px; }
+      h1 { font-size: 44px; }
+      .hero-lead { font-size: 17px; }
+      .signup-card { padding: 28px; }
+      .steps { grid-template-columns: 1fr; gap: 20px; }
+      .tiers { grid-template-columns: 1fr; gap: 16px; }
+      .section { padding: 70px 0; }
+      .founding { padding: 70px 0; }
+      .final-cta { padding: 80px 0; }
+      .logo { font-size: 36px; }
+      .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+    }
+    @media (max-width: 500px) {
+      h1 { font-size: 36px; }
+      .section-title { font-size: 30px; }
+      .signup-card { padding: 22px; }
+      .tier { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">Libra</div>
+      <div class="nav-cta">
+        <a href="#signupCard" class="btn-pill btn-sage">Iscriviti alla waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="pill">
+        <span class="dot"></span>
+        Apertura giugno 2026 · Founding Reader Program
+      </div>
+
+      <h1>I libri tornano a essere <span class="gold">un appuntamento.</span></h1>
+
+      <p class="hero-lead">
+        Libra è la prima piattaforma italiana per leggere libri come si guardano le serie TV.
+        Storie a blocchi, autori italiani, il primo capitolo sempre gratis.
+      </p>
+
+      <div class="signup-card" id="signupCard">
+
+        <div class="signup-form">
+          <div class="signup-header">
+            <div class="signup-title">Entra in lista</div>
+            <div class="signup-counter">
+              <strong id="counterRemaining">—</strong><br><span id="counterLabel">posti Founding rimasti</span>
+            </div>
+          </div>
+
+          <form id="waitlistForm">
+            <div class="form-row">
+              <input type="text" id="name" class="form-input" placeholder="Come ti chiami" required>
+            </div>
+
+            <div class="form-row">
+              <input type="email" id="email" class="form-input" placeholder="La tua email" required>
+            </div>
+
+            <button type="submit" class="btn-primary" id="submitBtn">
+              Iscrivimi alla waitlist
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M5 12h14M13 5l7 7-7 7"/>
+              </svg>
+            </button>
+
+            <p class="form-note">
+              Gratis. <strong>I primi 20 diventano Founding Reader.</strong>
+            </p>
+            <p class="form-error" id="formError">Qualcosa è andato storto. Riprova tra poco.</p>
+          </form>
+        </div>
+
+        <div class="success-card" id="successCard">
+          <div class="success-badge-pill" id="successBadge">Founding Reader</div>
+          <h3 class="success-title">Sei in lista, <span id="successName">amico</span> 🎉</h3>
+          <p class="success-msg">
+            Ti scriveremo qualche giorno prima del lancio con accesso anticipato e tutte le tue ricompense.
+          </p>
+
+          <div class="position-display">
+            <div class="position-label">La tua posizione</div>
+            <div class="position-number">#<span id="positionNum">128</span></div>
+            <div class="position-tier" id="positionTier">Lotto Founding · Top 100</div>
+          </div>
+
+          <div class="referral-section">
+            <p class="referral-label">
+              <strong>Aiutaci a far conoscere Libra.</strong> Condividi con gli amici che amano leggere.
+            </p>
+            <div class="referral-link">
+              <code id="refLink">librastories.com/?ref=ABC123</code>
+              <button class="copy-btn" id="copyBtn">Copia</button>
+            </div>
+            <div class="share-buttons">
+              <a href="#" id="shareWA" class="share-btn" target="_blank">WhatsApp</a>
+              <a href="#" id="shareTW" class="share-btn" target="_blank">X / Twitter</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Come funziona</span>
+      <h2 class="section-title">Il piacere della lettura <span class="gold">ritrovata.</span></h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">01</div>
+          <h3>Scegli il tuo libro</h3>
+          <p>
+            Catalogo di autori italiani indipendenti. Romance, thriller, fantasy, saggi, cucina.
+            Il primo capitolo di ogni libro è sempre gratis.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-icon">02</div>
+          <h3>Massimo tre capitoli a settimana</h3>
+          <p>
+            Ogni libro esce a blocchi serializzati, fino a tre alla settimana per un massimo di tre mesi.
+            Come la tua serie TV preferita.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-icon">03</div>
+          <h3>Condividi le frasi, scopri autori</h3>
+          <p>
+            Le citazioni che ti restano addosso le salvi e le condividi. Nel tuo feed vedi quelle
+            dei lettori che segui — il modo nuovo per scoprire libri che non sapevi di volere.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="founding">
+    <div class="container">
+      <span class="section-label">Founding Reader Program</span>
+      <h2 class="section-title">Solo per chi <span class="gold">arriva prima.</span></h2>
+
+      <div class="tiers">
+        <div class="tier featured">
+          <div class="tier-badge">Più richiesto</div>
+          <div class="tier-header">
+            <div class="tier-lotto">Lotto 01</div>
+            <div class="tier-position">001–020</div>
+          </div>
+          <div class="tier-name">Founding Reader</div>
+          <ul>
+            <li>60 token bonus al lancio</li>
+            <li>1 mese Silver gratis</li>
+            <li>Badge "Founding Reader" permanente</li>
+            <li>Accesso 48h prima di tutti</li>
+            <li>Invito alla community privata</li>
+          </ul>
+        </div>
+
+        <div class="tier">
+          <div class="tier-header">
+            <div class="tier-lotto">Lotto 02</div>
+            <div class="tier-position">021–050</div>
+          </div>
+          <div class="tier-name">Early Founder</div>
+          <ul>
+            <li>40 token bonus al lancio</li>
+            <li>Accesso 48h prima di tutti</li>
+            <li>Invito alla community privata</li>
+          </ul>
+        </div>
+
+        <div class="tier">
+          <div class="tier-header">
+            <div class="tier-lotto">Lotto 03</div>
+            <div class="tier-position">051–100</div>
+          </div>
+          <div class="tier-name">Pioneer Reader</div>
+          <ul>
+            <li>30 token bonus al lancio</li>
+            <li>Accesso 48h prima di tutti</li>
+          </ul>
+        </div>
+
+        <div class="tier">
+          <div class="tier-header">
+            <div class="tier-lotto">Lotto 04</div>
+            <div class="tier-position">101–200</div>
+          </div>
+          <div class="tier-name">Early Access</div>
+          <ul>
+            <li>20 token bonus al lancio</li>
+            <li>Accesso 48h prima di tutti</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <h2>Manca poco. <span class="gold">Vuoi essere lì il primo giorno?</span></h2>
+      <p>
+        Apertura prevista: giugno 2026. Riservato ai primi 5.000 iscritti.
+      </p>
+      <a href="#signupCard" class="scroll-up">
+        Sì, iscrivimi
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <path d="M5 12h14M13 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="logo">Libra</div>
+      <div>© 2026 Libra · Fatto con il cuore in Italia</div>
+    </div>
+  </footer>
+
+  <script>
+    // Landing su dominio separato → chiama l'API di librastories.com (CORS abilitato lato endpoint)
+    const API_URL = 'https://librastories.com/api/waitlist';
+    const SIGNED_KEY = 'libra_signed';
+
+    // Soglie dei lotti Founding (solo per l'etichetta del contatore)
+    const TIERS = [
+      { limit: 20,  name: 'Founding Reader' },
+      { limit: 50,  name: 'Early Founder' },
+      { limit: 100, name: 'Pioneer Reader' },
+      { limit: 200, name: 'Early Access' }
+    ];
+
+    function renderCounter(signedCount) {
+      const numEl = document.getElementById('counterRemaining');
+      const labelEl = document.getElementById('counterLabel');
+
+      const tier = TIERS.find(t => signedCount < t.limit);
+      let target, label;
+      if (tier) {
+        target = tier.limit - signedCount;
+        label = `posti ${tier.name} rimasti`;
+      } else {
+        target = signedCount;
+        label = 'lettori in waitlist';
+      }
+      labelEl.textContent = label;
+
+      const duration = 1200;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        numEl.textContent = Math.floor(eased * target);
+        if (progress < 1) requestAnimationFrame(tick);
+        else numEl.textContent = target;
+      }
+      requestAnimationFrame(tick);
+    }
+
+    async function initCounter() {
+      try {
+        const res = await fetch(API_URL, { method: 'GET' });
+        const data = await res.json();
+        renderCounter(typeof data.count === 'number' ? data.count : 0);
+      } catch {
+        document.getElementById('counterRemaining').textContent = '20';
+      }
+    }
+
+    const form = document.getElementById('waitlistForm');
+    const signupCard = document.getElementById('signupCard');
+    const successCard = document.getElementById('successCard');
+    const submitBtn = document.getElementById('submitBtn');
+    const formError = document.getElementById('formError');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if (!name || !email) return;
+
+      formError.classList.remove('active');
+      submitBtn.disabled = true;
+      const originalLabel = submitBtn.innerHTML;
+      submitBtn.textContent = 'Iscrizione in corso…';
+
+      try {
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, ref: getRefParam() })
+        });
+        const data = await res.json();
+        if (!res.ok || !data.ok) throw new Error(data.error || 'request_failed');
+
+        localStorage.setItem(SIGNED_KEY, JSON.stringify({
+          name, position: data.position, refCode: data.refCode, tier: data.tier
+        }));
+        showSuccess(name, data.position, data.refCode, data.tier);
+      } catch (err) {
+        console.error('Waitlist signup failed:', err);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalLabel;
+        formError.classList.add('active');
+      }
+    });
+
+    function badgeForTier(tier) {
+      if (!tier) return 'In lista';
+      if (tier.includes('Founding Reader')) return 'Founding Reader';
+      if (tier.includes('Early Founder')) return 'Early Founder';
+      if (tier.includes('Pioneer Reader')) return 'Pioneer Reader';
+      if (tier.includes('Early Access')) return 'Early Access';
+      return 'In lista';
+    }
+
+    function showSuccess(name, position, refCode, tier) {
+      document.getElementById('successName').textContent = name.split(' ')[0];
+      document.getElementById('positionNum').textContent = position;
+      document.getElementById('positionTier').textContent = tier || "Lista d'attesa";
+      document.getElementById('successBadge').textContent = badgeForTier(tier);
+
+      const baseUrl = window.location.origin + window.location.pathname;
+      const fullRefLink = `${baseUrl}?ref=${refCode}`;
+      document.getElementById('refLink').textContent = fullRefLink;
+      const shareText = `Mi sono appena iscritto a Libra, la nuova piattaforma per leggere libri serializzati come una serie TV. Entra prima di me con questo link:`;
+      document.getElementById('shareWA').href = `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + fullRefLink)}`;
+      document.getElementById('shareTW').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(fullRefLink)}`;
+      signupCard.classList.add('success-mode');
+      successCard.classList.add('active');
+    }
+
+    document.getElementById('copyBtn').addEventListener('click', async (e) => {
+      const link = document.getElementById('refLink').textContent;
+      try {
+        await navigator.clipboard.writeText(link);
+        const btn = e.target;
+        btn.textContent = 'Copiato ✓';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copia';
+          btn.classList.remove('copied');
+        }, 2000);
+      } catch (err) {
+        console.error('Copy failed:', err);
+      }
+    });
+
+    function getRefParam() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('ref') || null;
+    }
+
+    function checkExisting() {
+      const saved = localStorage.getItem(SIGNED_KEY);
+      if (saved) {
+        try {
+          const data = JSON.parse(saved);
+          showSuccess(data.name, data.position, data.refCode, data.tier);
+        } catch {}
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initCounter();
+      checkExisting();
+      const ref = getRefParam();
+      if (ref) console.log('Referred by:', ref);
+    });
+  </script>
+
+</body>
+</html>
