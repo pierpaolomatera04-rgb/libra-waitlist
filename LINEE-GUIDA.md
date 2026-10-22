@@ -20,10 +20,18 @@ va alla radice, con `index.html` in root.
 Le linee guida sono **struttura e meccaniche** (vedi sotto), NON l'aspetto.
 Ogni sito deve avere un **look diverso**: palette, coppia di font, forme/accenti e
 metafora decorativa vanno cambiati in base al mestiere, così i siti non sembrano
-tutti uguali. Esempi già fatti:
-- Psicologa (Chiara Fabiani): Instrument Serif + Literata, palette prugna/cipria/salvia.
-- Nail salon (Senena Nails): Playfair Display + Poppins, palette nude/espresso/oro,
-  con galleria foto.
+tutti uguali. **Non basta cambiare palette e font**: vanno cambiati anche **layout, struttura,
+ordine delle sezioni e componenti**. No agli stessi riquadri ovunque: dare un
+tocco moderno e dinamico (gradienti, chip, timeline, animazioni leggere, hero
+diversi). Il **quiz può stare anche in alto** (subito dopo l'hero) se rende meglio.
+Esempi già fatti (da NON ricopiare uguali):
+- Psicologa (Chiara Fabiani): Instrument Serif + Literata, prugna/cipria/salvia,
+  hero testo+foto, amaca, cerchio che respira.
+- Nail salon (Senena Nails): Syne + Inter, avorio/inchiostro/malva, hero centrato
+  con striscia foto, marquee, listino, testimonianze a rotazione.
+- Fisioterapista domiciliare (Federico Rafael Rossi): Sora + Inter, blu/teal/verde,
+  niente foto (icone e pannelli gradiente), quiz self-check in alto, trattamenti a
+  icone, step con linea, chip, zone. Recensioni Google reali.
 
 ## Stile (impianto, da reinterpretare ogni volta)
 - Font: **Instrument Serif** (titoli, con `<em>` in colore accento), **Literata**
