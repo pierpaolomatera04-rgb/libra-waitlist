@@ -16,7 +16,16 @@ favicon.ico
 Pubblicazione su **Cloudflare Pages** (Upload assets): il contenuto della cartella
 va alla radice, con `index.html` in root.
 
-## Stile
+## ⚠️ Regola d'oro: cambiare stile OGNI volta
+Le linee guida sono **struttura e meccaniche** (vedi sotto), NON l'aspetto.
+Ogni sito deve avere un **look diverso**: palette, coppia di font, forme/accenti e
+metafora decorativa vanno cambiati in base al mestiere, così i siti non sembrano
+tutti uguali. Esempi già fatti:
+- Psicologa (Chiara Fabiani): Instrument Serif + Literata, palette prugna/cipria/salvia.
+- Nail salon (Senena Nails): Playfair Display + Poppins, palette nude/espresso/oro,
+  con galleria foto.
+
+## Stile (impianto, da reinterpretare ogni volta)
 - Font: **Instrument Serif** (titoli, con `<em>` in colore accento), **Literata**
   (testo), **Inter** (interfaccia/UI). Caricati da Google Fonts.
 - Palette calda/professionale (token in `:root`): cream, blush, rose, rose-deep,
