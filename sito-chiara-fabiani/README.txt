@@ -1,18 +1,27 @@
-SITO CHIARA FABIANI — Pronto per Cloudflare Pages
-==================================================
+SITO DOTT.SSA CHIARA FABIANI — Pronto per Cloudflare Pages
+==========================================================
 
-Come pubblicarlo (metodo più semplice, senza Git):
-1. Vai su https://dash.cloudflare.com  ->  Workers & Pages  ->  Create  ->  Pages
-   ->  "Upload assets" (Carica risorse).
-2. Trascina questa cartella (o il file index.html) nell'area di upload.
-3. Dai un nome al progetto e clicca "Deploy".
-4. In pochi secondi avrai l'indirizzo pubblico (es. chiara-fabiani.pages.dev).
+Struttura cartella:
+  index.html        -> la homepage
+  privacy.html      -> informativa privacy e cookie
+  css/style.css     -> grafica
+  js/main.js        -> animazioni, quiz, mappa
+  assets/           -> foto, favicon, immagine social (og)
+  favicon.ico
 
-Note:
-- È tutto in un unico file (index.html): logo, foto, stili e script sono già
-  incorporati, non servono altri file.
-- Per collegare un dominio personalizzato: nel progetto Pages ->  Custom domains.
+PUBBLICARE SU CLOUDFLARE PAGES (senza Git):
+  1. dash.cloudflare.com -> Workers & Pages -> Create -> Pages -> "Upload assets".
+  2. Trascina TUTTO il contenuto di questa cartella (non la cartella stessa:
+     index.html deve stare alla radice del progetto).
+  3. Dai un nome al progetto e clicca Deploy.
+  4. Dominio personalizzato: nel progetto -> Custom domains.
 
-Da personalizzare dentro index.html (cerca questi punti):
-- Email: attualmente "info@chiarafabiani.it"
-- Indirizzo mappa: "Via Cesare Beccaria, Roma" (cambia il testo dopo q= nell'iframe)
+DA PERSONALIZZARE / CONFERMARE (cerca i commenti "DA CONFERMARE/COMPLETARE"):
+  - Indirizzo completo dello studio (numero civico e CAP) in index.html e privacy.html
+  - P.IVA nel footer e nella privacy
+  - Mappa: l'embed usa "Via Cesare Beccaria, Roma"; se serve il punto esatto,
+    sostituisci data-src del blocco #mapWrap in index.html
+  - Email (se la vuoi mostrare)
+
+NOTA: la sezione "Proposta / Scopri il prezzo" in fondo è l'anteprima commerciale
+(iltuositofacile.com). Va rimossa quando il sito diventa definitivo per la cliente.
