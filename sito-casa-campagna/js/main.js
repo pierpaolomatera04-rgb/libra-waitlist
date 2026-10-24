@@ -7,24 +7,35 @@
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var WA = '393396904793';
 
-  /* ── Intro premium (una volta per sessione) ── */
+  /* ── Intro premium a sipario (una volta per sessione) ── */
   (function () {
     var intro = document.getElementById('intro'); if (!intro) return;
     var seen = false;
     try { seen = sessionStorage.getItem('lcc-intro') === '1'; } catch (e) {}
-    function close() {
-      intro.classList.add('hide');
-      document.body.classList.remove('intro-lock');
-      try { sessionStorage.setItem('lcc-intro', '1'); } catch (e) {}
-      setTimeout(function () { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 1100);
-    }
-    if (seen || reduced) { document.body.classList.remove('intro-lock'); intro.classList.add('hide'); setTimeout(function () { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 60); return; }
+    var remove = function () { if (intro.parentNode) intro.parentNode.removeChild(intro); };
+    if (seen || reduced) { document.body.classList.remove('intro-lock'); document.body.classList.add('ready'); remove(); return; }
+    // nome lettera per lettera
+    var nm = intro.querySelector('.il-name'), txt = nm.textContent, i = 0;
+    nm.innerHTML = txt.split('').map(function (c) {
+      if (c === ' ') return ' ';
+      return '<span class="ch" aria-hidden="true" style="--i:' + (i++) + '">' + c + '</span>';
+    }).join('');
     document.body.classList.add('intro-lock');
-    var timer = setTimeout(close, 3000);
-    var skip = function () { clearTimeout(timer); close(); };
+    var done = false;
+    function open() {
+      if (done) return; done = true;
+      intro.classList.add('open');
+      document.body.classList.remove('intro-lock');
+      setTimeout(function () { document.body.classList.add('ready'); }, 350);
+      try { sessionStorage.setItem('lcc-intro', '1'); } catch (e) {}
+      setTimeout(remove, 1400);
+    }
+    var timer = setTimeout(open, 3700);
+    var skip = function () { clearTimeout(timer); open(); };
     intro.addEventListener('click', skip);
     window.addEventListener('wheel', skip, { once: true, passive: true });
     window.addEventListener('touchmove', skip, { once: true, passive: true });
+    window.addEventListener('keydown', skip, { once: true });
   })();
 
   /* ── Menu mobile ── */
@@ -52,10 +63,26 @@
     lastY = y;
   }, { passive: true });
 
+  /* ── Barra di avanzamento + hero che sfuma allo scroll ── */
+  (function () {
+    var bar = document.getElementById('progress'), heroIn = document.querySelector('.hero-in');
+    var ticking = false;
+    function upd() {
+      var y = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+      if (bar) bar.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
+      if (heroIn && !reduced && document.body.classList.contains('ready')) {
+        var k = Math.min(1, y / (window.innerHeight * .7));
+        heroIn.style.opacity = 1 - k * .9; heroIn.style.transform = 'translateY(' + (y * .25) + 'px)';
+      }
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(upd); ticking = true; } }, { passive: true });
+  })();
+
   var yr = document.getElementById('year'); if (yr) yr.textContent = new Date().getFullYear();
 
   /* ── Reveal ── */
-  var targets = all('.rev, .reveal-group');
+  var targets = all('.rev, .reveal-group, .imgrev');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -119,6 +146,7 @@
       minus.disabled = nights <= MIN; minus.style.opacity = nights <= MIN ? .35 : 1;
       var tot = nights * RATE;
       big.innerHTML = money(tot) + ' <small>€</small>';
+      big.classList.remove('bump'); void big.offsetWidth; big.classList.add('bump');
       var msg = 'Buongiorno, vorrei verificare la disponibilità de La Casa di Campagna per ' + nights + ' notti';
       if (dt && dt.value) { var p = dt.value.split('-'); msg += ' con arrivo il ' + p[2] + '/' + p[1] + '/' + p[0]; }
       msg += ' (totale indicativo ' + money(tot) + ' €, intera casa fino a 3 ospiti).';

@@ -34,13 +34,20 @@
   </script>
 </head>
 <body class="intro-lock">
-  <!-- INTRO PREMIUM -->
+  <div id="progress" aria-hidden="true"></div>
+  <!-- INTRO PREMIUM (sipario) -->
   <div id="intro" role="presentation">
-    <div class="intro-bg" style="background-image:url('assets/vista.jpg')"></div>
-    <div class="intro-veil"></div>
+    <div class="ip ip-top"><div class="ip-img" style="background-image:url('assets/vista.jpg')"></div></div>
+    <div class="ip ip-bot"><div class="ip-img" style="background-image:url('assets/vista.jpg')"></div></div>
     <div class="intro-logo">
+      <svg class="il-emblem" viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="em-ring" cx="60" cy="60" r="54" />
+        <path class="em-hill" d="M16 84 Q34 64 50 74 T86 68 Q96 66 104 74" />
+        <path class="em-house" d="M46 76 V58 L60 46 L74 58 V76" />
+        <path class="em-leaf" d="M62 36 C66 26 76 24 82 26 C80 34 72 40 62 36 Z" />
+      </svg>
       <div class="il-top">Ponticelli di Scandriglia · Sabina</div>
-      <div class="il-name">La Casa di Campagna</div>
+      <div class="il-name" aria-label="La Casa di Campagna">La Casa di Campagna</div>
       <div class="il-line"></div>
       <div class="il-sub">La natura, fuori casa</div>
     </div>
@@ -68,7 +75,7 @@
     <section class="hero">
       <div class="hero-bg" style="background-image:url('assets/hero.jpg')"></div>
       <div class="wrap hero-in">
-        <span class="lbl">La Casa di Campagna · Sabina</span>
+        <span class="lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Ponticelli di Scandriglia · Sabina</span>
         <h1>La natura,<br /><em>fuori casa.</em></h1>
         <p class="hero-sub">Una casa tutta per te in Sabina, tra uliveti e boschi dei Monti Lucretili, a circa 48 km da Roma. Il punto di partenza perfetto per camminare nella natura.</p>
         <div class="hero-cta">
@@ -81,7 +88,7 @@
 
     <!-- INFO BAR -->
     <div class="infobar">
-      <div class="wrap infobar-in">
+      <div class="wrap infobar-in reveal-group">
         <div><div class="n">Intera casa</div><div class="t">tutta per te</div></div>
         <div><div class="n">Fino a 3</div><div class="t">ospiti</div></div>
         <div><div class="n">2 notti</div><div class="t">soggiorno minimo</div></div>
@@ -93,7 +100,7 @@
     <section class="sec" id="la-casa">
       <div class="wrap">
         <div class="editorial">
-          <div class="ed-media rev">
+          <div class="ed-media rev imgrev">
             <img src="assets/salotto.jpg" alt="Salotto con camino e divano letto" />
             <span class="cap">Salotto con camino</span>
           </div>
@@ -116,9 +123,9 @@
           <h2>Gli ambienti</h2>
         </div>
         <div class="gal rev">
-          <figure class="wide"><img src="assets/salotto.jpg" alt="Salotto con camino e divano letto" loading="lazy" /></figure>
-          <figure><img src="assets/vista.jpg" alt="Vista sui monti dalla finestra" loading="lazy" /></figure>
-          <figure><img src="assets/cucina.jpg" alt="Cucina attrezzata" loading="lazy" /></figure>
+          <figure class="wide imgrev"><img src="assets/salotto.jpg" alt="Salotto con camino e divano letto" loading="lazy" /></figure>
+          <figure class="imgrev"><img src="assets/vista.jpg" alt="Vista sui monti dalla finestra" loading="lazy" /></figure>
+          <figure class="imgrev"><img src="assets/cucina.jpg" alt="Cucina attrezzata" loading="lazy" /></figure>
         </div>
       </div>
     </section>
@@ -175,17 +182,17 @@
         </div>
         <div class="terr reveal-group">
           <article class="tcard">
-            <div class="tn">01</div>
+            <div class="thead"><span class="ticon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20 9 8l4 6 3-4 6 10z"/><circle cx="17" cy="5" r="2"/></svg></span><span class="tn">01</span></div>
             <h3>Passeggiate e percorsi</h3>
             <p>Sentieri, boschi e paesaggi dei Monti Lucretili per camminare con calma e scoprire il territorio.</p>
           </article>
           <article class="tcard">
-            <div class="tn">02</div>
+            <div class="thead"><span class="ticon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 10c3-3 6-3 10 1 4-4 7-4 10-1"/><path d="M12 11v3"/><path d="M6 16c2-1 4-1 6 1 2-2 4-2 6-1"/></svg></span><span class="tn">02</span></div>
             <h3>Il regno dell'aquila reale</h3>
             <p>Un ambiente protetto, ricco di biodiversità, dove alzando lo sguardo puoi ammirare l'aquila reale.</p>
           </article>
           <article class="tcard">
-            <div class="tn">03</div>
+            <div class="thead"><span class="ticon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C8 14 12 10 20 4"/><path d="M9 14c-2.5-.5-4.5.5-5.5 2.5 2.5.5 4.5-.5 5.5-2.5z"/><path d="M13 10c0-2.5 1.5-4.5 4-5 0 2.5-1.5 4.5-4 5z"/><ellipse cx="16" cy="13" rx="1.8" ry="2.4"/></svg></span><span class="tn">03</span></div>
             <h3>La cultura dell'olio</h3>
             <p>Terra di olio extravergine biologico certificato: un'eccellenza locale da conoscere durante il soggiorno.</p>
           </article>
