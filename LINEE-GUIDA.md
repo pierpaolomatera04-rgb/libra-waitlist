@@ -32,6 +32,12 @@ Esempi già fatti (da NON ricopiare uguali):
 - Fisioterapista domiciliare (Federico Rafael Rossi): Sora + Inter, blu/teal/verde,
   niente foto (icone e pannelli gradiente), quiz self-check in alto, trattamenti a
   icone, step con linea, chip, zone. Recensioni Google reali.
+- Casa vacanze (La Casa di Campagna, Scandriglia): Fraunces + Inter, verde bosco/
+  crema/terracotta, intro animata del nome, galleria, calcolatore date→prezzo→
+  WhatsApp, banner offerta. Niente quiz: l'elemento interattivo è il calcolatore.
+
+**L'elemento interattivo varia col mestiere**: quiz "vero o falso", self-check,
+calcolatore prezzo/preventivo, configuratore… non per forza sempre il quiz.
 
 ## Stile (impianto, da reinterpretare ogni volta)
 - Font: **Instrument Serif** (titoli, con `<em>` in colore accento), **Literata**
