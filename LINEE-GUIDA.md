@@ -42,6 +42,18 @@ Esempi già fatti (da NON ricopiare uguali):
 - Tono: caldo, rassicurante, niente marketing aggressivo. **Niente trattini lunghi
   (— / –) nei testi visibili**: usare virgole/punti.
 
+## Intro animata d'apertura (da QUESTO sito in poi, su tutti)
+All'apertura il sito mostra una breve **animazione del nome/logo dell'attività**
+(stile "N" di Netflix): il nome/monogramma appare/si anima a schermo pieno su
+sfondo in tinta col sito, poi l'overlay si dissolve e compare la homepage.
+- Durata ~1,5-2,5s, poi fade-out automatico; skippabile al clic/tap o allo scroll.
+- Si mostra una sola volta per sessione (salvare un flag in sessionStorage, con
+  try/catch) così non si ripete a ogni navigazione.
+- Rispettare `prefers-reduced-motion`: in quel caso niente animazione, overlay via
+  subito.
+- L'animazione va reinterpretata ogni volta in base allo stile del sito (lettere
+  che si compongono, logo che si disegna, zoom, ecc.), non sempre identica.
+
 ## Sezioni (ordine tipico)
 1. Header sticky (monogramma iniziali + nome + nav + CTA "Prenota"); si nasconde
    scorrendo giù, riappare salendo.
