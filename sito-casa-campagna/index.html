@@ -7,18 +7,18 @@
   <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <title>La Casa di Campagna · Casa vacanze a Scandriglia, Sabina</title>
-  <meta name="description" content="La Casa di Campagna, casa vacanze a Ponticelli di Scandriglia (Sabina), a circa 48 km da Roma. Intera casa fino a 3 ospiti, ideale per trekking ed escursionismo nei Monti Lucretili. Da 87,50 € a notte." />
+  <meta name="description" content="La Casa di Campagna, casa vacanze a Ponticelli di Scandriglia (Sabina), a circa 48 km da Roma. Intera casa fino a 3 ospiti, base ideale per il trekking nei Monti Lucretili con kit escursionistico incluso. Da 87,50 € a notte." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="La Casa di Campagna · Scandriglia, Sabina" />
-  <meta property="og:description" content="La natura fuori casa. Casa vacanze in Sabina per escursionismo e trekking nei Monti Lucretili, a 48 km da Roma." />
+  <meta property="og:description" content="La natura, fuori casa. Casa vacanze in Sabina per il trekking nei Monti Lucretili, a 48 km da Roma." />
   <meta property="og:image" content="assets/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">
   {
@@ -34,14 +34,17 @@
   </script>
 </head>
 <body class="intro-lock">
-  <!-- INTRO ANIMATA -->
+  <!-- INTRO PREMIUM -->
   <div id="intro" role="presentation">
+    <div class="intro-bg" style="background-image:url('assets/vista.jpg')"></div>
+    <div class="intro-veil"></div>
     <div class="intro-logo">
-      <div class="il-name"><span>La</span> <span>Casa</span> <span>di</span> <span>Campagna</span></div>
+      <div class="il-top">Ponticelli di Scandriglia · Sabina</div>
+      <div class="il-name">La Casa di Campagna</div>
       <div class="il-line"></div>
-      <div class="il-sub">Ponticelli di Scandriglia · Sabina</div>
+      <div class="il-sub">La natura, fuori casa</div>
     </div>
-    <button type="button" class="intro-skip">Entra →</button>
+    <button type="button" class="intro-skip">Entra</button>
   </div>
 
   <!-- HEADER -->
@@ -49,11 +52,12 @@
     <div class="wrap header-in">
       <a href="#top" class="logo">La Casa di Campagna</a>
       <nav class="nav" id="nav">
-        <a href="#territorio">Il territorio</a>
         <a href="#la-casa">La casa</a>
+        <a href="#trekking">Trekking</a>
+        <a href="#territorio">Il territorio</a>
         <a href="#prezzi">Prezzi</a>
         <a href="#contatti">Contatti</a>
-        <a class="btn btn-forest" href="#prezzi">Disponibilità</a>
+        <a class="btn btn-line" href="#prezzi">Disponibilità</a>
       </nav>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -62,65 +66,100 @@
   <main id="top">
     <!-- HERO -->
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="rev">
-          <span class="eyebrow">La Casa di Campagna · Ponticelli di Scandriglia</span>
-          <h1>La natura, <em>fuori casa.</em></h1>
-          <p class="hero-sub">Un luogo dove soggiornare in Sabina, ideale per l'escursionismo e il trekking nel Parco dei Monti Lucretili, tra uliveti e boschi, a circa 48 km da Roma.</p>
-          <div class="hero-feats">
-            <span>Fino a 3 ospiti</span><span>Wi-Fi</span><span>Giardino e barbecue</span><span>Parcheggio gratuito</span><span>Kit per gli escursionisti</span>
-          </div>
-          <div class="hero-cta">
-            <a class="btn btn-terra" href="#prezzi">Richiedi disponibilità</a>
-            <a class="btn btn-ghost" href="#territorio">Scopri il territorio</a>
-          </div>
+      <div class="hero-bg" style="background-image:url('assets/hero.jpg')"></div>
+      <div class="wrap hero-in">
+        <span class="lbl">La Casa di Campagna · Sabina</span>
+        <h1>La natura,<br /><em>fuori casa.</em></h1>
+        <p class="hero-sub">Una casa tutta per te in Sabina, tra uliveti e boschi dei Monti Lucretili, a circa 48 km da Roma. Il punto di partenza perfetto per camminare nella natura.</p>
+        <div class="hero-cta">
+          <a class="btn btn-brass" href="#prezzi">Richiedi disponibilità</a>
+          <span class="hero-price">da 87,50 €<small>a notte · intera casa</small></span>
         </div>
-        <div class="hero-visual rev">
-          <img src="assets/hero.jpg" alt="Vista sui Monti Lucretili dalla finestra della casa" />
-          <div class="pricetag">da 87,50 € a notte<small>Intera casa · 1-3 ospiti · min 2 notti</small></div>
+      </div>
+      <span class="scrollcue" aria-hidden="true"></span>
+    </section>
+
+    <!-- INFO BAR -->
+    <div class="infobar">
+      <div class="wrap infobar-in">
+        <div><div class="n">Intera casa</div><div class="t">tutta per te</div></div>
+        <div><div class="n">Fino a 3</div><div class="t">ospiti</div></div>
+        <div><div class="n">2 notti</div><div class="t">soggiorno minimo</div></div>
+        <div><div class="n">48 km</div><div class="t">da Roma</div></div>
+      </div>
+    </div>
+
+    <!-- LA CASA (editoriale) -->
+    <section class="sec" id="la-casa">
+      <div class="wrap">
+        <div class="editorial">
+          <div class="ed-media rev">
+            <img src="assets/salotto.jpg" alt="Salotto con camino e divano letto" />
+            <span class="cap">Salotto con camino</span>
+          </div>
+          <div class="ed-body rev">
+            <span class="lbl">Il tuo spazio in Sabina</span>
+            <h2>Semplice, comoda, immersa nel verde</h2>
+            <p>La casa si trova a <strong>Ponticelli, frazione di Scandriglia</strong>, a circa 50 km da Roma: una base tranquilla per il trekking in Sabina e l'escursionismo nei Monti Lucretili, tra sentieri, boschi e paesaggi del Parco Naturale Regionale.</p>
+            <p>A due passi i <strong>Lagustelli di Percile</strong>, area umida di importanza internazionale (Convenzione di Ramsar), e il <strong>Lago del Turano</strong>, raggiungibile in auto.</p>
+            <p>Intera casa fino a 3 ospiti, con Wi-Fi, giardino e barbecue e parcheggio gratuito.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- GALLERIA -->
-    <section class="sec" style="padding-top:20px">
+    <section class="sec sec-cream" style="padding-top:0;padding-bottom:110px">
       <div class="wrap">
-        <div class="gallery rev">
-          <figure><img src="assets/salotto.jpg" alt="Salotto con camino e divano letto" /><figcaption>Salotto con camino e divano letto</figcaption></figure>
-          <figure><img src="assets/vista.jpg" alt="Vista sui monti dalla finestra" /><figcaption>Vista sui monti</figcaption></figure>
-          <figure><img src="assets/cucina.jpg" alt="Cucina attrezzata" /><figcaption>Cucina attrezzata</figcaption></figure>
+        <div class="head left rev" style="padding-top:90px">
+          <span class="lbl">Uno sguardo</span>
+          <h2>Gli ambienti</h2>
+        </div>
+        <div class="gal rev">
+          <figure class="wide"><img src="assets/salotto.jpg" alt="Salotto con camino e divano letto" loading="lazy" /></figure>
+          <figure><img src="assets/vista.jpg" alt="Vista sui monti dalla finestra" loading="lazy" /></figure>
+          <figure><img src="assets/cucina.jpg" alt="Cucina attrezzata" loading="lazy" /></figure>
         </div>
       </div>
     </section>
 
-    <!-- LA CASA -->
-    <section class="sec sec-cream2" id="la-casa">
+    <!-- TREKKING + QUIZ -->
+    <section class="sec sec-forest" id="trekking">
       <div class="wrap">
-        <div class="sec-head left rev">
-          <span class="eyebrow">Il tuo spazio in Sabina</span>
-          <h2>Casa vacanze a Scandriglia, semplice e comoda</h2>
-        </div>
-        <div class="house">
-          <div class="rev">
-            <p>La casa si trova a <strong>Ponticelli, frazione di Scandriglia</strong>, a circa 50 km da Roma. È una base tranquilla per il trekking in Sabina e l'escursionismo nei Monti Lucretili, con sentieri, boschi e paesaggi del Parco Naturale Regionale.</p>
-            <p>I <strong>Lagustelli di Percile</strong>, formati dai laghi Fraturno e Marraone, sono una meta naturalistica da scoprire durante il soggiorno: un'area umida riconosciuta d'importanza internazionale ai sensi della Convenzione di Ramsar, il cui tratto finale si percorre a piedi.</p>
-            <p>Resta da visitare anche il <strong>Lago del Turano</strong>, raggiungibile in auto dalla casa.</p>
-          </div>
-          <div class="kit rev">
-            <h3>Kit escursionista incluso</h3>
-            <p class="kit-sub">A disposizione degli ospiti, gratuitamente.</p>
-            <ul>
+        <div class="trek">
+          <div class="trek-body rev">
+            <span class="lbl">Cammini nella natura</span>
+            <h2>Arrivi e basta: all'attrezzatura pensiamo noi</h2>
+            <p>I Monti Lucretili sono un invito a camminare. Per questo mettiamo a disposizione degli ospiti, <strong style="color:#fff">gratuitamente</strong>, un kit completo da escursionismo: non devi portare nulla da casa.</p>
+            <ul class="kitlist">
               <li>Due zaini</li>
               <li>Due paia di bastoncini</li>
               <li>Cartine dei sentieri</li>
-              <li>Binocolo</li>
-              <li>Bussola</li>
-              <li>Fischietto</li>
+              <li>Binocolo e bussola</li>
               <li>Torce frontali e a mano</li>
-              <li>Mantellina per la pioggia</li>
+              <li>Mantellina antipioggia</li>
               <li>Coperte termiche</li>
               <li>Kit per le vesciche</li>
             </ul>
+          </div>
+          <div class="quizc rev" id="quizc">
+            <div class="qz-body">
+              <div class="qz-top"><span class="qz-step">01 / 03</span><span class="qz-kick">Sei da trekking?</span></div>
+              <div class="qz-bar"><i></i></div>
+              <p class="qz-q">Ti piacerebbe esplorare i sentieri dei Monti Lucretili?</p>
+              <div class="qz-opts"><button type="button" data-choice="si">Sì</button><button type="button" data-choice="no">No</button></div>
+              <div class="qz-fb">
+                <p class="qz-expl"></p>
+                <button type="button" class="qz-next">Continua</button>
+              </div>
+            </div>
+            <div class="qz-end">
+              <div class="em">🥾</div>
+              <h3>Sei pronto per la Sabina</h3>
+              <p>La Casa di Campagna è la base perfetta per il trekking: bastoncini, zaini, cartine e tutto il kit sono <strong>inclusi nel soggiorno</strong>. Scrivici le date e partiamo.</p>
+              <a class="btn btn-brass" href="https://wa.me/393396904793?text=Buongiorno%2C%20vorrei%20informazioni%20per%20un%20soggiorno%20con%20trekking%20a%20La%20Casa%20di%20Campagna." target="_blank" rel="noopener">Richiedi le date</a>
+              <div><button type="button" class="qz-restart">Rifai il test</button></div>
+            </div>
           </div>
         </div>
       </div>
@@ -129,120 +168,127 @@
     <!-- TERRITORIO -->
     <section class="sec" id="territorio">
       <div class="wrap">
-        <div class="sec-head rev">
-          <span class="eyebrow">Una casa, molti motivi per venire</span>
-          <h2>Scandriglia e la Sabina da vivere</h2>
-          <p>Un punto di partenza per escursionismo e cammini nella natura della Sabina, tra i sentieri dei Monti Lucretili, i Lagustelli di Percile e il Lago del Turano, con la cultura dell'olio del territorio da scoprire.</p>
+        <div class="head rev">
+          <span class="lbl">Scandriglia e la Sabina</span>
+          <h2>Un territorio da vivere</h2>
+          <p>Sentieri dei Monti Lucretili, i Lagustelli di Percile, il Lago del Turano e la cultura dell'olio: tutto intorno alla casa.</p>
         </div>
         <div class="terr reveal-group">
           <article class="tcard">
-            <div class="ic">🥾</div>
-            <h3>Passeggiate e percorsi naturalistici</h3>
-            <p>Sentieri, boschi e paesaggi dei Monti Lucretili per camminare con calma e scoprire il territorio, con il kit da escursionismo sempre a disposizione.</p>
+            <div class="tn">01</div>
+            <h3>Passeggiate e percorsi</h3>
+            <p>Sentieri, boschi e paesaggi dei Monti Lucretili per camminare con calma e scoprire il territorio.</p>
           </article>
           <article class="tcard">
-            <div class="ic">🦅</div>
-            <h3>Il territorio dell'aquila reale</h3>
-            <p>Un ambiente protetto, ricco di biodiversità, nel quale, alzando lo sguardo, puoi ammirare l'aquila reale.</p>
+            <div class="tn">02</div>
+            <h3>Il regno dell'aquila reale</h3>
+            <p>Un ambiente protetto, ricco di biodiversità, dove alzando lo sguardo puoi ammirare l'aquila reale.</p>
           </article>
           <article class="tcard">
-            <div class="ic">🫒</div>
+            <div class="tn">03</div>
             <h3>La cultura dell'olio</h3>
-            <p>Scandriglia conserva una forte tradizione olivicola ed è terra di olio extravergine biologico certificato: un'eccellenza locale da conoscere durante il soggiorno.</p>
+            <p>Terra di olio extravergine biologico certificato: un'eccellenza locale da conoscere durante il soggiorno.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- OFFERTA LAGO DEL TURANO -->
-    <section class="sec sec-cream2">
+    <!-- OFFERTA TURANO -->
+    <section class="sec sec-cream">
       <div class="wrap">
         <div class="promo rev">
           <div>
-            <span class="eyebrow">Offerta riservata ai soggiorni di almeno 7 notti</span>
+            <span class="lbl">Riservata ai soggiorni di almeno 7 notti</span>
             <h2>Il tour del Lago del Turano con aperitivo, incluso</h2>
-            <p>Per chi soggiorna una settimana, La Casa di Campagna offre il giro sul battello elettrico Thiora con aperitivo a bordo, <strong>fino a un massimo di 3 ospiti</strong>.</p>
-            <p style="font-size:.88rem;opacity:.85">Disponibile fino al 31 ottobre 2026, nei giorni previsti dal programma di Vivi Turano e in base alla disponibilità dei posti. Prenotazione e biglietti a cura della Casa di Campagna.</p>
+            <p>Per chi soggiorna una settimana, offriamo il giro sul battello elettrico Thiora con aperitivo a bordo, <strong>fino a 3 ospiti</strong>.</p>
+            <p style="font-size:.86rem">Disponibile fino al 31 ottobre 2026, nei giorni del programma Vivi Turano e in base alla disponibilità. Prenotazione e biglietti a cura della Casa di Campagna.</p>
           </div>
           <div class="side">
-            <a class="btn" href="https://www.viviturano.com" target="_blank" rel="noopener">Scopri il battello e il lago</a>
+            <a class="btn btn-forest" href="https://www.viviturano.com" target="_blank" rel="noopener">Scopri il lago</a>
             <a class="lnk" href="https://www.viviturano.com" target="_blank" rel="noopener">www.viviturano.com</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PREZZI / PRENOTAZIONE -->
-    <section class="sec" id="prezzi">
+    <!-- PREVENTIVO -->
+    <section class="sec sec-forest" id="prezzi">
       <div class="wrap">
-        <div class="sec-head left rev">
-          <span class="eyebrow">Richiesta di soggiorno</span>
-          <h2>Scegli le notti che ti occorrono</h2>
+        <div class="head rev">
+          <span class="lbl">Richiesta di soggiorno</span>
+          <h2>Calcola il tuo soggiorno</h2>
+          <p>Scegli quante notti vuoi fermarti: ti mostriamo il totale indicativo e invii la richiesta già compilata su WhatsApp.</p>
         </div>
-        <div class="booking" id="booking">
-          <div class="rev">
-            <div class="note-box">Da 87,50 € per notte per l'intera casa (da 1 a 3 persone) · Soggiorno minimo: 2 notti</div>
-            <p class="help">Indica il giorno di arrivo e quello di partenza: il prezzo viene calcolato sulle date scelte. Puoi poi inviare la richiesta già compilata con il pulsante WhatsApp.</p>
-            <div class="cancel-note">
-              <p><strong>Importante:</strong> l'invio su WhatsApp è soltanto una richiesta. La prenotazione diventa definitiva solo dopo la conferma scritta e il ricevimento del bonifico istantaneo dell'importo concordato.</p>
-              <p><strong>Cancellazione gratuita</strong> fino alle ore 18:00 del giorno precedente all'arrivo. Dopo tale termine, l'importo non è rimborsabile.</p>
-            </div>
+        <div class="quote rev" id="quote">
+          <div class="quote-head">
+            <h3>Intera casa</h3>
+            <div class="from">87,50 €<small>a notte · 1-3 ospiti</small></div>
           </div>
-          <div class="book-card rev">
-            <h3>Scegli le date</h3>
-            <div class="book-row">
-              <div><label for="dtIn">Arrivo</label><input type="date" id="dtIn" /></div>
-              <div><label for="dtOut">Partenza</label><input type="date" id="dtOut" /></div>
+          <div class="quote-body">
+            <div class="qrow">
+              <span class="ql">Notti (min. 2)</span>
+              <div class="stepper"><button type="button" id="nMinus" aria-label="Meno notti">−</button><span class="val" id="nVal">2</span><button type="button" id="nPlus" aria-label="Più notti">+</button></div>
             </div>
-            <div class="book-total" id="bkTotal">Scegli arrivo e partenza per vedere il totale.</div>
-            <a class="btn btn-wa" id="bkWa" href="https://wa.me/393396904793?text=Buongiorno%2C%20vorrei%20informazioni%20sulla%20disponibilit%C3%A0%20de%20La%20Casa%20di%20Campagna." target="_blank" rel="noopener">Scrivi su WhatsApp per la disponibilità</a>
-            <a class="btn btn-forest" href="tel:+393396904793">Chiama · 339 690 4793</a>
-            <p class="book-foot"><strong>Per prenotare è necessario inviare la richiesta su WhatsApp.</strong> Per informazioni puoi anche chiamarci direttamente.</p>
+            <div class="qrow qdate">
+              <span class="ql">Arrivo (facoltativo)</span>
+              <input type="date" id="qDate" />
+            </div>
+            <div class="qrow">
+              <span class="ql">Ospiti</span>
+              <span class="qv">fino a 3</span>
+            </div>
+            <div class="qtot">
+              <span class="ql">Totale indicativo</span>
+              <span class="qbig" id="qBig">175,00 <small>€</small></span>
+            </div>
+            <p class="qnote">Il prezzo è calcolato sulle notti scelte. L'invio su WhatsApp è una richiesta di disponibilità.</p>
+            <a class="btn btn-wa" id="qWa" href="https://wa.me/393396904793" target="_blank" rel="noopener">Richiedi disponibilità su WhatsApp</a>
+            <a class="btn btn-line-light" href="tel:+393396904793">Chiama · 339 690 4793</a>
           </div>
+          <div class="quote-foot"><strong>Per prenotare è necessario inviare la richiesta su WhatsApp.</strong> La prenotazione è definitiva dopo la nostra conferma scritta e il bonifico dell'importo concordato.</div>
         </div>
+        <p class="cancel"><strong>Cancellazione gratuita</strong> fino alle ore 18:00 del giorno precedente all'arrivo. Dopo tale termine, l'importo non è rimborsabile.</p>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="sec sec-cream2" id="faq">
+    <section class="sec" id="faq">
       <div class="wrap">
-        <div class="sec-head rev">
-          <span class="eyebrow">Domande frequenti</span>
+        <div class="head rev">
+          <span class="lbl">Domande frequenti</span>
           <h2>Prima di prenotare</h2>
         </div>
         <div class="faq rev">
-          <details><summary>Come si prenota?</summary><p>Scegli le date nella sezione prezzi e invia la richiesta su WhatsApp, oppure chiamaci al 339 690 4793. La prenotazione diventa definitiva dopo la nostra conferma scritta e il bonifico dell'importo concordato.</p></details>
-          <details><summary>Qual è il soggiorno minimo e quanto costa?</summary><p>Il soggiorno minimo è di 2 notti. Il prezzo parte da 87,50 € a notte per l'intera casa, da 1 a 3 persone.</p></details>
+          <details><summary>Come si prenota?</summary><p>Calcola le notti nella sezione prezzi e invia la richiesta su WhatsApp, oppure chiamaci al 339 690 4793. La prenotazione diventa definitiva dopo la nostra conferma scritta e il bonifico dell'importo concordato.</p></details>
+          <details><summary>Serve portare l'attrezzatura da trekking?</summary><p>No: mettiamo a disposizione gratuitamente un kit completo (zaini, bastoncini, cartine, binocolo, bussola, torce e altro). Devi solo pensare alle scarpe comode.</p></details>
+          <details><summary>Qual è il soggiorno minimo e quanto costa?</summary><p>Il soggiorno minimo è di 2 notti, a partire da 87,50 € a notte per l'intera casa, da 1 a 3 persone.</p></details>
           <details><summary>Posso cancellare?</summary><p>Sì: la cancellazione è gratuita fino alle ore 18:00 del giorno precedente all'arrivo. Dopo tale termine l'importo non è rimborsabile.</p></details>
-          <details><summary>Cosa è incluso?</summary><p>L'intera casa fino a 3 ospiti, Wi-Fi, giardino con barbecue, parcheggio gratuito e il kit completo per gli escursionisti (zaini, bastoncini, cartine, binocolo e altro).</p></details>
-          <details><summary>Dove si trova e come si arriva?</summary><p>A Ponticelli, frazione di Scandriglia (Sabina), a circa 48-50 km da Roma. Si raggiunge comodamente in auto; trovi le indicazioni nella sezione Contatti.</p></details>
+          <details><summary>Dove si trova e come si arriva?</summary><p>A Ponticelli, frazione di Scandriglia (Sabina), a circa 48-50 km da Roma. Si raggiunge comodamente in auto; trovi le indicazioni nei Contatti.</p></details>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="sec">
-      <div class="wrap">
-        <div class="cta rev">
-          <h2>La tua pausa nella natura ti aspetta</h2>
-          <p>Scrivici le date del tuo soggiorno: verifichiamo la disponibilità e ti aiutiamo a organizzare le escursioni.</p>
-          <a class="btn btn-wa" href="https://wa.me/393396904793?text=Buongiorno%2C%20vorrei%20informazioni%20sulla%20disponibilit%C3%A0%20de%20La%20Casa%20di%20Campagna." target="_blank" rel="noopener">Scrivici su WhatsApp →</a>
-        </div>
+    <section class="cta" style="background-image:url('assets/vista.jpg')">
+      <div class="in">
+        <h2>La tua pausa nella natura ti aspetta</h2>
+        <p>Scrivici le date del tuo soggiorno: verifichiamo la disponibilità e ti aiutiamo a organizzare le escursioni.</p>
+        <a class="btn btn-brass" href="https://wa.me/393396904793?text=Buongiorno%2C%20vorrei%20informazioni%20sulla%20disponibilit%C3%A0%20de%20La%20Casa%20di%20Campagna." target="_blank" rel="noopener">Scrivici su WhatsApp</a>
       </div>
     </section>
 
     <!-- CONTATTI -->
-    <section class="sec" id="contatti">
+    <section class="sec sec-cream" id="contatti">
       <div class="wrap">
-        <div class="sec-head left rev">
-          <span class="eyebrow">Contatti</span>
+        <div class="head left rev">
+          <span class="lbl">Contatti</span>
           <h2>Dove siamo</h2>
         </div>
         <div class="contact-grid">
-          <div class="reveal-group">
-            <div class="cinfo"><div class="ic">📍</div><div><div class="cl">Dove</div><div class="cv">Ponticelli, frazione di Scandriglia</div><div class="cs">Sabina (RI) · a circa 48 km da Roma</div></div></div>
-            <div class="cinfo"><div class="ic">📞</div><div><div class="cl">Telefono e WhatsApp</div><div class="cv"><a href="tel:+393396904793">339 690 4793</a></div></div></div>
-            <div class="cinfo"><div class="ic">🛏️</div><div><div class="cl">La casa</div><div class="cv">Intera casa · fino a 3 ospiti</div><div class="cs">Da 87,50 € a notte · minimo 2 notti</div></div></div>
+          <div class="rev">
+            <div class="cinfo"><div class="cl">Dove</div><div class="cv">Ponticelli, frazione di Scandriglia</div><div class="cs">Sabina (RI) · a circa 48 km da Roma</div></div>
+            <div class="cinfo"><div class="cl">Telefono e WhatsApp</div><div class="cv"><a href="tel:+393396904793">339 690 4793</a></div></div>
+            <div class="cinfo"><div class="cl">La casa</div><div class="cv">Intera casa · fino a 3 ospiti</div><div class="cs">Da 87,50 € a notte · minimo 2 notti</div></div>
           </div>
           <div class="map-wrap rev" id="mapWrap" data-src="https://www.google.com/maps?q=Ponticelli%2C%20Scandriglia%20RI&z=13&output=embed">
             <div class="map-ph">
@@ -260,7 +306,7 @@
     <!-- PROPOSTA (solo anteprima): da togliere quando il sito diventa definitivo -->
     <section class="offer wrap" id="proposta">
       <div class="offer-teaser rev">
-        <span class="eyebrow">Anteprima preparata per te da iltuositofacile.com</span>
+        <span class="lbl">Anteprima preparata per te da iltuositofacile.com</span>
         <h2>Ti piace? Questo sito può essere <em>il tuo.</em></h2>
         <button type="button" class="btn btn-forest btn-price" id="priceBtn" aria-expanded="false" aria-controls="offerCard">Scopri il prezzo ↓</button>
       </div>
@@ -294,7 +340,7 @@
   </main>
 
   <footer class="foot">
-    <div class="logo">La Casa di Campagna</div>
+    <a href="#top" class="logo">La Casa di Campagna</a>
     <!-- DA COMPLETARE: dati fiscali / CIR-CIN se richiesto per strutture ricettive -->
     <div>Ponticelli di Scandriglia · Sabina (RI) · <a href="tel:+393396904793">339 690 4793</a></div>
     <div>© <span id="year">2026</span> La Casa di Campagna · <a href="privacy.html">Privacy e cookie</a></div>
@@ -305,6 +351,6 @@
     <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.61.609l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.344 0-4.507-.8-6.222-2.142l-.435-.347-3.3 1.106 1.106-3.3-.347-.435A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
   </a>
 
-  <script src="js/main.js?v=1"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

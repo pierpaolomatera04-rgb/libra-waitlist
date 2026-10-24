@@ -7,7 +7,7 @@
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var WA = '393396904793';
 
-  /* ── Intro animata (una volta per sessione) ── */
+  /* ── Intro premium (una volta per sessione) ── */
   (function () {
     var intro = document.getElementById('intro'); if (!intro) return;
     var seen = false;
@@ -16,14 +16,13 @@
       intro.classList.add('hide');
       document.body.classList.remove('intro-lock');
       try { sessionStorage.setItem('lcc-intro', '1'); } catch (e) {}
-      setTimeout(function () { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 900);
+      setTimeout(function () { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 1100);
     }
-    if (seen || reduced) { intro.classList.add('hide'); document.body.classList.remove('intro-lock'); setTimeout(function () { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 50); return; }
+    if (seen || reduced) { document.body.classList.remove('intro-lock'); intro.classList.add('hide'); setTimeout(function () { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 60); return; }
     document.body.classList.add('intro-lock');
-    var timer = setTimeout(close, 2500);
+    var timer = setTimeout(close, 3000);
     var skip = function () { clearTimeout(timer); close(); };
     intro.addEventListener('click', skip);
-    var sb = intro.querySelector('.intro-skip'); if (sb) sb.addEventListener('click', skip);
     window.addEventListener('wheel', skip, { once: true, passive: true });
     window.addEventListener('touchmove', skip, { once: true, passive: true });
   })();
@@ -42,20 +41,20 @@
     });
   }
 
-  /* ── Header: si nasconde scendendo, torna salendo ── */
+  /* ── Header: trasparente sull'hero, solido allo scroll; si nasconde scendendo ── */
   var header = document.getElementById('header');
   var lastY = window.scrollY;
   window.addEventListener('scroll', function () {
     var y = window.scrollY;
-    header.classList.toggle('scrolled', y > 20);
-    if (y > lastY && y > 160 && !nav.classList.contains('open')) header.classList.add('hide');
-    else if (y < lastY - 4 || y < 160) header.classList.remove('hide');
+    header.classList.toggle('solid', y > 60);
+    if (y > lastY && y > 220 && !nav.classList.contains('open')) header.classList.add('hide');
+    else if (y < lastY - 4 || y < 220) header.classList.remove('hide');
     lastY = y;
   }, { passive: true });
 
   var yr = document.getElementById('year'); if (yr) yr.textContent = new Date().getFullYear();
 
-  /* ── Reveal allo scroll ── */
+  /* ── Reveal ── */
   var targets = all('.rev, .reveal-group');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (es) {
@@ -71,32 +70,64 @@
     w.innerHTML = '<iframe src="' + w.dataset.src + '" title="Mappa della casa" loading="lazy" allowfullscreen></iframe>';
   });
 
-  /* ── Calcolatore soggiorno: date → notti → prezzo → WhatsApp ── */
+  /* ── Quiz trekking ── */
   (function () {
-    var box = document.getElementById('booking'); if (!box) return;
-    var inA = document.getElementById('dtIn'), inB = document.getElementById('dtOut');
-    var out = document.getElementById('bkTotal'), wa = document.getElementById('bkWa');
+    var box = document.getElementById('quizc'); if (!box) return;
+    var qs = [
+      { q: 'Ti piacerebbe esplorare i sentieri dei Monti Lucretili?', e: 'Perfetto: la casa è il punto di partenza ideale per i cammini della Sabina.' },
+      { q: 'Hai già con te bastoncini, zaini e cartine dei sentieri?', e: 'Nessun problema: qui trovi il kit completo da trekking incluso nel soggiorno, non devi portare nulla.' },
+      { q: 'Ti farebbe piacere qualche consiglio sui percorsi più belli?', e: 'Con piacere: ti indichiamo i sentieri e le mete migliori in base ai tuoi giorni.' }
+    ];
+    var qEl = box.querySelector('.qz-q'), opts = box.querySelector('.qz-opts'), fb = box.querySelector('.qz-fb'),
+        bar = box.querySelector('.qz-bar i'), step = box.querySelector('.qz-step'), body = box.querySelector('.qz-body'), end = box.querySelector('.qz-end');
+    var cur = 0;
+    function render() {
+      qEl.textContent = qs[cur].q;
+      step.textContent = '0' + (cur + 1) + ' / 0' + qs.length;
+      bar.style.width = (cur / qs.length * 100) + '%';
+      fb.classList.remove('show'); opts.style.display = 'grid';
+    }
+    opts.querySelectorAll('button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        fb.querySelector('.qz-expl').textContent = qs[cur].e;
+        opts.style.display = 'none'; fb.classList.add('show');
+        bar.style.width = ((cur + 1) / qs.length * 100) + '%';
+      });
+    });
+    fb.querySelector('.qz-next').addEventListener('click', function () {
+      cur++;
+      if (cur >= qs.length) { body.style.display = 'none'; end.classList.add('show'); }
+      else render();
+    });
+    var rs = box.querySelector('.qz-restart');
+    if (rs) rs.addEventListener('click', function () { cur = 0; body.style.display = ''; end.classList.remove('show'); render(); });
+    render();
+  })();
+
+  /* ── Preventivo: notti (stepper) + arrivo → totale → WhatsApp ── */
+  (function () {
+    var box = document.getElementById('quote'); if (!box) return;
     var RATE = 87.5, MIN = 2;
+    var minus = document.getElementById('nMinus'), plus = document.getElementById('nPlus'), val = document.getElementById('nVal');
+    var dt = document.getElementById('qDate'), big = document.getElementById('qBig'), wa = document.getElementById('qWa');
+    var nights = MIN;
     var today = new Date(); today.setHours(0, 0, 0, 0);
-    var iso = function (d) { return d.toISOString().slice(0, 10); };
-    inA.min = iso(today);
-    var fmt = function (s) { var p = s.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; };
-    function calc() {
-      var a = inA.value, b = inB.value;
-      if (a) { var min = new Date(a); min.setDate(min.getDate() + MIN); inB.min = iso(min); }
-      if (!a || !b) { out.innerHTML = 'Scegli arrivo e partenza per vedere il totale.'; wa.href = waBase(); return; }
-      var da = new Date(a), db = new Date(b);
-      var nights = Math.round((db - da) / 864e5);
-      if (nights < MIN) { out.innerHTML = 'Il soggiorno minimo è di <b>' + MIN + ' notti</b>. Scegli una data di partenza più avanti.'; wa.href = waBase(); return; }
-      var tot = (nights * RATE);
-      var totStr = tot.toLocaleString('it-IT', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      out.innerHTML = nights + ' notti × 87,50 € = <b>' + totStr + ' €</b><br><span style="font-weight:400;font-size:.88rem;color:var(--ink-2)">Intera casa · fino a 3 ospiti</span>';
-      var msg = 'Buongiorno, vorrei verificare la disponibilità per La Casa di Campagna dal ' + fmt(a) + ' al ' + fmt(b) + ' (' + nights + ' notti, totale indicativo ' + totStr + ' €).';
+    if (dt) dt.min = today.toISOString().slice(0, 10);
+    var money = function (n) { return n.toLocaleString('it-IT', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+    function paint() {
+      val.textContent = nights;
+      minus.disabled = nights <= MIN; minus.style.opacity = nights <= MIN ? .35 : 1;
+      var tot = nights * RATE;
+      big.innerHTML = money(tot) + ' <small>€</small>';
+      var msg = 'Buongiorno, vorrei verificare la disponibilità de La Casa di Campagna per ' + nights + ' notti';
+      if (dt && dt.value) { var p = dt.value.split('-'); msg += ' con arrivo il ' + p[2] + '/' + p[1] + '/' + p[0]; }
+      msg += ' (totale indicativo ' + money(tot) + ' €, intera casa fino a 3 ospiti).';
       wa.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
     }
-    function waBase() { return 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Buongiorno, vorrei informazioni sulla disponibilità de La Casa di Campagna.'); }
-    inA.addEventListener('change', calc); inB.addEventListener('change', calc);
-    calc();
+    minus.addEventListener('click', function () { if (nights > MIN) { nights--; paint(); } });
+    plus.addEventListener('click', function () { if (nights < 30) { nights++; paint(); } });
+    if (dt) dt.addEventListener('change', paint);
+    paint();
   })();
 
   /* ── Offerta: apre la card ── */
