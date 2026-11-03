@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marco-carfagna.primositolocale.workers.dev/sitemap.xml
