@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="canonical" href="https://marco-carfagna.primositolocale.workers.dev/" />
   <meta name="robots" content="index, follow" />
-  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/style.css?v=5" />
   <script>
   (function () {
     var d = document.documentElement; d.classList.add('js');
@@ -88,18 +88,11 @@
     <!-- APERTURA DEL SITO: ritratto nella mela del logo + bilancia gusto/salute -->
     <section class="hero" id="top">
       <div class="container hero-inner">
-        <div class="apple h-anim" style="--d:.1s">
-          <svg viewBox="0 0 400 460" role="img" aria-label="Il Dott. Marco Carfagna">
-            <defs><clipPath id="appleClip"><path d="M200,114.6 C156.8,72.8 56,80.4 38,186.8 C20,293.2 81.2,418.6 149.6,426.2 C174.8,430 185.6,414.8 200,414.8 C214.4,414.8 225.2,430 250.4,426.2 C318.8,418.6 380,293.2 362,186.8 C344,80.4 243.2,72.8 200,114.6 Z" /></clipPath></defs>
-            <circle class="ap-ring" cx="200" cy="262" r="196" />
-            <ellipse class="ap-shadow" cx="200" cy="446" rx="128" ry="11" />
-            <image href="assets/ritratto.jpg" x="11" y="35" width="420" height="420" preserveAspectRatio="xMidYMid slice" clip-path="url(#appleClip)" />
-            <path class="ap-stem" d="M200 118 C198 94 204 72 218 54" />
-            <path class="ap-leaf" d="M196 92 C172 66 150 70 138 90 C158 104 182 104 196 92 Z" />
-            <path class="ap-leaf b" d="M207 80 C214 58 232 50 248 56 C240 76 224 86 207 80 Z" />
-          </svg>
-          <div class="apple-badge"><strong>4 sedi + online</strong>Roma, Tivoli e Guidonia</div>
-        </div>
+        <figure class="portrait h-anim" style="--d:.1s">
+          <div class="pf"><img src="assets/ritratto.jpg" alt="Il Dott. Marco Carfagna, biologo nutrizionista" width="760" height="950" /></div>
+          <span class="seal" aria-hidden="true"><img src="assets/logo-mc.png" alt="" width="828" height="551" /></span>
+          <figcaption class="badge"><strong>4 sedi + online</strong>Roma, Tivoli e Guidonia</figcaption>
+        </figure>
         <div class="hero-text">
           <p class="kicker h-anim" style="--d:.2s">Biologo nutrizionista · Chinesiologo</p>
           <h1 class="h-anim" style="--d:.32s">Il cibo è un <span class="swap" aria-live="polite"><span class="sizer">piacere,</span><span class="w on">piacere,</span><span class="w">alleato,</span><span class="w">amico,</span></span><br />non un nemico.</h1>
